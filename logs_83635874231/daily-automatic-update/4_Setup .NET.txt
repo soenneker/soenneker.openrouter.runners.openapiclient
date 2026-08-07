@@ -1,0 +1,17 @@
+﻿2026-08-03T18:52:14.9565110Z ##[group]Run actions/setup-dotnet@v6
+2026-08-03T18:52:14.9566309Z with:
+2026-08-03T18:52:14.9567162Z   dotnet-version: 10.0.x
+2026-08-03T18:52:14.9568131Z   cache: false
+2026-08-03T18:52:14.9569303Z env:
+2026-08-03T18:52:14.9570249Z   GH__USERNAME: ***
+2026-08-03T18:52:14.9571415Z   GH__TOKEN: ***
+2026-08-03T18:52:14.9572536Z   GIT__TOKEN: ***
+2026-08-03T18:52:14.9573736Z   GIT__NAME: ***
+2026-08-03T18:52:14.9575640Z   GIT__EMAIL: ***
+2026-08-03T18:52:14.9577149Z   NUGET__TOKEN: ***
+2026-08-03T18:52:14.9578090Z   BUILD_VERSION: 4.0.124
+2026-08-03T18:52:14.9579907Z ##[endgroup]
+2026-08-03T18:52:15.0981693Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2026-08-03T18:52:15.2949104Z dotnet-install: .NET Core Runtime with version '10.0.10' is already installed.
+2026-08-03T18:52:15.2975234Z [command]/home/runner/work/_actions/actions/setup-dotnet/v6/externals/install-dotnet.sh --skip-non-versioned-files --channel 10.0
+2026-08-03T18:52:15.4988431Z dotnet-install: .NET Core SDK with version '10.0.302' is already installed.

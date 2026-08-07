@@ -1,0 +1,33 @@
+﻿2026-08-03T18:52:15.5136511Z ##[group]Run retries=5
+2026-08-03T18:52:15.5136954Z [36;1mretries=5[0m
+2026-08-03T18:52:15.5137275Z [36;1mbase_wait_time=15[0m
+2026-08-03T18:52:15.5137632Z [36;1mexponent=2[0m
+2026-08-03T18:52:15.5137954Z [36;1m[0m
+2026-08-03T18:52:15.5138258Z [36;1mfor i in $(seq 1 $retries); do[0m
+2026-08-03T18:52:15.5139144Z [36;1m  if dotnet restore; then[0m
+2026-08-03T18:52:15.5139551Z [36;1m    break[0m
+2026-08-03T18:52:15.5140148Z [36;1m  fi[0m
+2026-08-03T18:52:15.5140432Z [36;1m[0m
+2026-08-03T18:52:15.5140732Z [36;1m  if [ $i -lt $retries ]; then[0m
+2026-08-03T18:52:15.5141308Z [36;1m    wait_time=$(awk "BEGIN {print int($base_wait_time * ($exponent ^ ($i - 1)))}")[0m
+2026-08-03T18:52:15.5142004Z [36;1m    echo "dotnet restore failed, retrying in $wait_time seconds..."[0m
+2026-08-03T18:52:15.5142528Z [36;1m    sleep $wait_time[0m
+2026-08-03T18:52:15.5142866Z [36;1m  else[0m
+2026-08-03T18:52:15.5143259Z [36;1m    echo "dotnet restore failed after $retries retries."[0m
+2026-08-03T18:52:15.5143770Z [36;1m    exit 1[0m
+2026-08-03T18:52:15.5144070Z [36;1m  fi[0m
+2026-08-03T18:52:15.5144360Z [36;1mdone[0m
+2026-08-03T18:52:15.5195160Z shell: /usr/bin/bash -e {0}
+2026-08-03T18:52:15.5195548Z env:
+2026-08-03T18:52:15.5196039Z   GH__USERNAME: ***
+2026-08-03T18:52:15.5196618Z   GH__TOKEN: ***
+2026-08-03T18:52:15.5197055Z   GIT__TOKEN: ***
+2026-08-03T18:52:15.5197397Z   GIT__NAME: ***
+2026-08-03T18:52:15.5197827Z   GIT__EMAIL: ***
+2026-08-03T18:52:15.5198263Z   NUGET__TOKEN: ***
+2026-08-03T18:52:15.5198937Z   BUILD_VERSION: 4.0.124
+2026-08-03T18:52:15.5199310Z   DOTNET_ROOT: /usr/share/dotnet
+2026-08-03T18:52:15.5199661Z ##[endgroup]
+2026-08-03T18:52:17.0420461Z   Determining projects to restore...
+2026-08-03T18:52:22.4910639Z   Restored /home/runner/work/***.openrouter.runners.openapiclient/***.openrouter.runners.openapiclient/src/Soenneker.OpenRouter.Runners.OpenApiClient/Soenneker.OpenRouter.Runners.OpenApiClient.csproj (in 4.93 sec).
+2026-08-03T18:52:22.8586844Z   Restored /home/runner/work/***.openrouter.runners.openapiclient/***.openrouter.runners.openapiclient/test/Soenneker.OpenRouter.Runners.OpenApiClient.Tests/Soenneker.OpenRouter.Runners.OpenApiClient.Tests.csproj (in 5.32 sec).
